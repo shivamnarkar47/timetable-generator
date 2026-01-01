@@ -130,7 +130,7 @@ export const Step8Generation = ({
       const payload = transformDataForBackend();
       console.log("Sending Payload:", JSON.stringify(payload, null, 2)); // Debugging log
 
-      const response = await fetch('http://localhost:8000/generate-timetable', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/generate-timetable`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
